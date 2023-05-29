@@ -1,0 +1,27 @@
+.header {
+    font-size: 84px;
+    text-align: center;
+    color: var(--primary);
+    margin: 32px 0;
+
+}
+
+.breakTimer {
+    font-weight: 600;
+    font-size: 18px;
+    margin: 0;
+}
+
+.stretchButton {
+    background: var(--primary);
+    border: none;
+    color: #ffffff;
+    font-size: 24px;
+    padding: 12px 48px;
+    border-radius: 8px;
+    font-weight: 500;
+}
+
+.stretchButton:hover {
+    background-color: var(--primary-light);
+}
