@@ -1,7 +1,21 @@
+.main {
+    min-height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .logo {
     display: flex;
     align-items: center;
-    gap: 6px;
+    gap: 4px;
 }
 
 .logo img {
@@ -9,6 +23,13 @@
 }
 
 .logo p {
-    font-size: 20px;
+    font-size: 22px;
     font-weight: 600;
+}
+
+.divider {
+    height: 2px;
+    width: 40vw;
+    min-width: 200px;
+    background-color: #ababab;
 }
