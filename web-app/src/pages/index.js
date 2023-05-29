@@ -31,6 +31,9 @@ export default function Home() {
           </div>
           <img src="../assets/banner-image.png" alt=""/>
         </div>
+          <div className={styles.WhySectionH1}>
+            <h1>Why Stretch925!</h1>
+          </div>
         <div className={styles.whySection}>
           <p>In today's working world, where prolonged sitting has become the norm, incorporating stretching into your routine is essential. It counteracts the negative effects of sitting by improving circulation, reducing muscle stiffness, and preventing aches and pains. Beyond the physical benefits, stretching offers a mental escape, reducing stress and enhancing clarity. Our app empowers you to prioritize your well-being, break free from the sedentary cycle, and experience the remarkable benefits of stretching for a healthier, more balanced lifestyle</p>
         </div>
