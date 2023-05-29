@@ -74,6 +74,7 @@ class Node(AbstractNode):
         reps = inputs.get('reps', {})
 
         # Handle the detection of each person
+        scores = {}
         line_height = round(30 * _FONT_SCALE)  # height of each 'line' in pixels; 30 is arbitrary
         for curr_id, bbox in zip(all_ids, bboxes):
 
@@ -87,6 +88,7 @@ class Node(AbstractNode):
             max_angle = max_angles.get(curr_id, 0)
             min_angle = min_angles.get(curr_id, pi)
             score = max(min(max_angle - min_angle, pi), 0) / pi
+            scores[curr_id] = round(score * reps.get(curr_id, 0) * 10)
 
             # Output the score
             message = '-' if max_angle < min_angle else f'{(score * 100):0.2f}%'
@@ -94,7 +96,7 @@ class Node(AbstractNode):
                          (0, round(255 * score), round(255 * (1 - score))))
             display_text(img, x, y - line_height, f'Reps: {reps.get(curr_id, -1)}', (255, 255, 255))
 
-        return {}
+        return {'scores': scores}
 
 
 if __name__ == '__main__':
