@@ -2,6 +2,7 @@ import BreakTime from '@/components/breakTime';
 import Pomodoro from '@/components/pomodoro';
 import styles from '@/styles/Timer.module.css'
 import { useEffect, useState } from 'react';
+import StretchIntro from './stretchIntro';
 
 const Timer = () => {
     const [isTimerActive, setIsTimerActive] = useState(false);
@@ -15,7 +16,7 @@ const Timer = () => {
     const [breakSecondsLeft, setBreakSecondsLeft] = useState(300);
 
     const [isStretch, setIsStretch] = useState(false);
-
+    const [stretchView, setStretchView] = useState("intro")
 
     const startTimer = () => {
         setIsTimerActive(true);
@@ -67,6 +68,11 @@ const Timer = () => {
         }
     }, [breakSecondsLeft, breakTimer])
 
+    const initStretch = () => {
+        setIsStretch(true);
+        setStretchView("intro");
+
+    }
 
     return (
         <>
@@ -81,7 +87,10 @@ const Timer = () => {
                 {
                     (!isBreak) ?
                     <Pomodoro {...{ isTimerActive, setIsTimerActive, secondsLeft, setSecondsLeft, startTimer, stopTimer, numSessions }} /> :
-                    <BreakTime {...{numSessions, breakSecondsLeft}}/>
+                    (isStretch) ?
+                        <StretchIntro {...{ numSessions, breakSecondsLeft}}/> :
+                        <BreakTime {...{numSessions, breakSecondsLeft, initStretch}}/>
+                    
                 }
             </div>
         </>

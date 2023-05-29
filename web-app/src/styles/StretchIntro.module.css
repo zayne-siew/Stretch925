@@ -1,0 +1,49 @@
+.breakTimer {
+    font-weight: 600;
+    font-size: 18px;
+    margin: 0;
+}
+
+.stretchContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+    flex-wrap: wrap;
+    gap: 24px;
+}
+
+.stretchCard {
+    height: 100%;
+    width: 15vw;
+    min-width: 120px;
+    background: var(--primary);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 8px;
+}
+
+.stretchCard h3 {
+    font-size: 20px;
+}
+
+.stretchCard img {
+    width: 70%;
+    max-height: 60%;
+}
+
+.readyButton {
+    background: var(--primary);
+    border: none;
+    color: #ffffff;
+    font-size: 24px;
+    padding: 8px 48px;
+    border-radius: 8px;
+    font-weight: 500;
+    margin: 32px 0;
+}
+
+.readyButton:hover {
+    background: var(--primary-light);
+}
