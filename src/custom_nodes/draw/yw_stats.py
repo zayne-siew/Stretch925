@@ -81,8 +81,9 @@ class Node(AbstractNode):
             _, y = obtain_keypoint(x2, y2, img_width, img_height)
 
             # Calculate and output the score
-            score = (max_angle - min_angle) / (90 * pi)
-            display_text(img, x, y - 2 * line_height, f'Score: {(score * 100):0.2f}%',
+            score = max(min(max_angle - min_angle, pi / 2), 0) / (pi / 2)
+            message = '-' if max_angle < min_angle else f'{(score * 100):0.2f}%'
+            display_text(img, x, y - 2 * line_height, f'Score: {message}',
                          (0, round(255 * score), round(255 * (1 - score))))
             display_text(img, x, y - line_height, f'Reps: {rep}', (255, 255, 255))
 

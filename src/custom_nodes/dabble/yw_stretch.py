@@ -62,8 +62,8 @@ class Node(AbstractNode):
 
         # Implement trackers
         self.curr_pos = defaultdict(lambda: self._SETUP)
-        self.max_angle = {}
-        self.min_angle = {}
+        self.max_angle = defaultdict(lambda: pi / 2)
+        self.min_angle = defaultdict(lambda: pi)
         self.reps = defaultdict(int)
 
     def _helper(
@@ -166,8 +166,8 @@ class Node(AbstractNode):
         threshold = 150 * pi / 180  # 150 deg
         if self.curr_pos[id] != self._SETUP:
             ave_angle = (left_angle + right_angle) / 2
-            self.max_angle[id] = max(self.max_angle.get(id, 0), ave_angle)
-            self.min_angle[id] = min(self.min_angle.get(id, pi), ave_angle)
+            self.max_angle[id] = max(self.max_angle[id], ave_angle)
+            self.min_angle[id] = min(self.min_angle[id], ave_angle)
         return left_angle >= threshold and right_angle >= threshold
 
     def is_w_pose(
@@ -212,8 +212,8 @@ class Node(AbstractNode):
         threshold = 120 * pi / 180  # 120 deg
         if self.curr_pos[id] != self._SETUP:
             ave_angle = (left_angle + right_angle) / 2
-            self.max_angle[id] = max(self.max_angle.get(id, 0), ave_angle)
-            self.min_angle[id] = min(self.min_angle.get(id, pi), ave_angle)
+            self.max_angle[id] = max(self.max_angle[id], ave_angle)
+            self.min_angle[id] = min(self.min_angle[id], ave_angle)
         return left_angle <= threshold and right_angle <= threshold
 
     def run(
