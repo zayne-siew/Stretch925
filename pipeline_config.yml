@@ -1,0 +1,39 @@
+nodes:
+
+# Use live video feed, preferably from on-board webcam
+- input.visual:
+    source: 0
+    resize:
+        do_resizing: True
+        width: 1920
+        height: 1080
+
+# Add YOLOv4 model for human detection to obtain bounding box information
+- model.yolo:
+    score_threshold: 0.6
+# Use the bounding box info to track and count detected humans
+- dabble.tracking
+# Draw the resultant bounding boxes and tracking IDs
+# - draw.bbox
+- draw.tag:
+    show: ["ids"]
+
+# Add PoseNet model for human pose estimation
+- model.posenet:
+    score_threshold: 0.6
+# Draw the resultant poses
+- draw.poses
+
+# Add custom Node model for pose analysis
+- custom_nodes.dabble.yw_stretch
+
+# Generate and display metadata
+- dabble.fps
+- draw.legend:
+    show: ["fps"]
+- custom_nodes.draw.yw_stats
+
+# Generate output video feed
+- output.screen:
+    window_name: "Stretch925"
+#- custom_nodes.output.local_save

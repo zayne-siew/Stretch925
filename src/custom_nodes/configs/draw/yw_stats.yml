@@ -1,0 +1,12 @@
+# Custom draw node for drawing coordinates of PoseNet keypoints
+
+input: [
+  'bboxes',
+  'img',
+  'max_angle',
+  'min_angle',
+  'reps'
+]
+
+# It does not output anything
+output: ['none']
