@@ -288,6 +288,7 @@ class Node(AbstractNode):
         return {
             'max_angle': self.max_angle,
             'min_angle': self.min_angle,
+            'pos': self.curr_pos,
             'reps': self.reps
         }
 

@@ -4,4 +4,4 @@
 input: ['img', 'keypoints', 'obj_attrs']
 
 # It outputs the angles and repetitions of the Y-W stretch
-output: ['max_angle', 'min_angle', 'reps']
+output: ['max_angle', 'min_angle', 'pos', 'reps']

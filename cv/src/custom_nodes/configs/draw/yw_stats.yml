@@ -5,6 +5,7 @@ input: [
   'img',
   'max_angle',
   'min_angle',
+  'pos',
   'reps'
 ]
 

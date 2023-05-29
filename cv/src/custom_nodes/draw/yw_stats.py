@@ -69,20 +69,23 @@ class Node(AbstractNode):
         bboxes = inputs.get('bboxes', [])
         max_angles = inputs.get('max_angle', {})
         min_angles = inputs.get('min_angle', {})
+        pos = inputs.get('pos', {})
         reps = inputs.get('reps', {})
 
         # Handle the detection of each person
         line_height = round(30 * _FONT_SCALE)  # height of each 'line' in pixels; 30 is arbitrary
-        for bbox, max_angle, min_angle, rep in zip(bboxes, max_angles, min_angles, reps):
+        for bbox, max_angle, min_angle, curr_pos, rep in zip(bboxes, max_angles, min_angles, pos, reps):
 
             # Obtain bounding box information
             x1, y1, x2, y2 = bbox
-            x, _ = obtain_keypoint(x1, y1, img_width, img_height)
-            _, y = obtain_keypoint(x2, y2, img_width, img_height)
+            x1, _ = obtain_keypoint(x1, y1, img_width, img_height)
+            x2, y = obtain_keypoint(x2, y2, img_width, img_height)
+            x = (x1 + x2) >> 1
 
             # Calculate and output the score
             score = max(min(max_angle - min_angle, pi / 2), 0) / (pi / 2)
             message = '-' if max_angle < min_angle else f'{(score * 100):0.2f}%'
+            display_text(img, x, y - 3 * line_height, str(curr_pos), (255, 255, 255))
             display_text(img, x, y - 2 * line_height, f'Score: {message}',
                          (0, round(255 * score), round(255 * (1 - score))))
             display_text(img, x, y - line_height, f'Reps: {rep}', (255, 255, 255))
