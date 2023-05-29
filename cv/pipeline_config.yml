@@ -25,13 +25,13 @@ nodes:
 - draw.poses
 
 # Add custom Node model for pose analysis
-- custom_nodes.dabble.lat_stretch
+- custom_nodes.dabble.ms_stretch
 
 # Generate and display metadata
 - dabble.fps
 - draw.legend:
     show: ["fps"]
-- custom_nodes.draw.lat_stats
+- custom_nodes.draw.ms_stats
 
 # Generate output video feed
 - output.screen:

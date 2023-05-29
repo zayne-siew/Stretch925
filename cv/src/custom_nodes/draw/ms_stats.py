@@ -1,6 +1,6 @@
-"""Docstring for the lat_stats.py module
+"""Docstring for the ms_stats.py module
 
-This module implements a custom draw Node class for handling the statistics of the lat stretch.
+This module implements a custom draw Node class for handling the statistics of the middle scalene stretch.
 
 Usage
 -----
