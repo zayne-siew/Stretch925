@@ -83,30 +83,32 @@
   background: var(--primary-light);
 }
 
-.WhySectionH1 {
-  background: var(--primary);
-  text-align: center;
-  padding-top: 30px;
-  font-size: 22px;
-  width: 100vw;
-}
-
 .whySection {
   background: var(--primary);
-  font-size: 20px;
-  height: 20vh;
   width: 100vw;
   display: flex;
   justify-content: center;
-  align-items: top;
-  padding: 0 10px; /* Added padding to create space on the left and right */
-  box-sizing: border-box; /* Ensure padding is included in the total width */
+  align-items: center;
+  padding: 20px 10px; /* Adjust the padding values as needed */
+  box-sizing: border-box;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Add a box shadow for visual separation */
+  margin-bottom: 20px; /* Add some bottom margin to create space between sections */
 }
 
-.whySection p {
+.content {
   max-width: 90vw;
   text-align: center;
 }
+
+.content h1 {
+  font-size: 41px; /* Adjust the font size as needed */
+  margin-bottom: 10px; /* Add some bottom margin to create spacing between the heading and paragraph */
+}
+
+.content p {
+  font-size: 20px;
+}
+
 
 .HowSectionH1 {
   text-align: center;
@@ -121,13 +123,15 @@
 }
 
 .resizedImage {
-  width: 400px;
-  height: 300px;
+  width: 100%;
+  height: auto;
+  max-width: 400px;
+  max-height: 300px;
 }
 
 .container {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px;
   justify-content: center;
   align-items: center;
@@ -148,6 +152,43 @@
 }
 
 .lastImage {
-  width: 300px;
-  height: 250px;
+  width: 100%;
+  height: auto;
+  max-width: 300px;
+  max-height: 250px;
 }
+
+.container {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 10px;
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+
+
+@media only screen and (max-width: 412px) {
+  .whySection {
+    align-items: flex-start; /* Align items to the top */
+    padding: 20px; /* Adjust padding as needed */
+  }
+
+  .whySection .content {
+    max-width: 100%; /* Adjust max-width as needed */
+  }
+
+  .container {
+    grid-template-columns: 1fr;
+    justify-items: center; /* Center items horizontally */
+  }
+
+  .group {
+    width: 100%; /* Set the width to 100% */
+    max-width: 300px; /* Limit the max width of each group */
+  }
+}
+  
+
+
+
+
+
