@@ -1,36 +1,33 @@
-"""
-Node template for creating custom nodes.
-"""
-
-from typing import Any, Dict
+from typing import Any, Mapping, Optional
 
 from peekingduck.pipeline.nodes.abstract_node import AbstractNode
 
 
 class Node(AbstractNode):
-    """This is a template class of how to write a node for PeekingDuck.
 
-    Args:
-        config (:obj:`Dict[str, Any]` | :obj:`None`): Node configuration.
-    """
+    def __init__(
+            self,
+            config: Optional[Mapping[str, Any]] = None,
+            **kwargs
+    ) -> None:
 
-    def __init__(self, config: Dict[str, Any] = None, **kwargs: Any) -> None:
-        super().__init__(config, node_path=__name__, **kwargs)
+        super().__init__(config, node_path=__name__, **kwargs)  # type: ignore
 
-        # initialize/load any configs and models here
-        # configs can be called by self.<config_name> e.g. self.filepath
-        # self.logger.info(f"model loaded with configs: config")
+    def run(
+            self,
+            inputs: Mapping[str, Any]
+    ) -> Mapping:
+        
+        # Obtain the scores of each person detected
+        scores = inputs.get('scores', {})
 
-    def run(self, inputs: Dict[str, Any]) -> Dict[str, Any]:  # type: ignore
-        """This node does ___.
+        # Store the scores in a temporary file
+        with open('../tmp.txt', 'a+') as file:
+            for curr_id, score in scores.items():
+                file.write(f'{curr_id}:{score}\n')
+        
+        return {}
 
-        Args:
-            inputs (dict): Dictionary with keys "__", "__".
 
-        Returns:
-            outputs (dict): Dictionary with keys "__".
-        """
-
-        # result = do_something(inputs["in1"], inputs["in2"])
-        # outputs = {"out1": result}
-        # return outputs
+if __name__ == '__main__':
+    pass

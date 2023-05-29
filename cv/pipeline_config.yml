@@ -36,4 +36,4 @@ nodes:
 # Generate output video feed
 - output.screen:
     window_name: "Stretch925"
-#- custom_nodes.output.local_save
+- custom_nodes.output.local_save

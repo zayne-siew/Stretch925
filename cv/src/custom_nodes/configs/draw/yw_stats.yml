@@ -9,5 +9,4 @@ input: [
   'reps'
 ]
 
-# It does not output anything
-output: ['none']
+output: ['scores']
