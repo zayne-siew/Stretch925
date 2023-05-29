@@ -60,10 +60,10 @@ class Node(AbstractNode):
         super().__init__(config, node_path=__name__, **kwargs)  # type: ignore
 
         # Implement trackers
-        self.curr_pos = {} # defaultdict(lambda: self._SETUP)
-        self.max_angle = {} # defaultdict(lambda: pi / 2)
-        self.min_angle = {} # defaultdict(lambda: pi)
-        self.reps = {} # defaultdict(int)
+        self.curr_pos = {}
+        self.max_angle = {}
+        self.min_angle = {}
+        self.reps = {}
 
     def _helper(
             self,
@@ -227,7 +227,7 @@ class Node(AbstractNode):
             self,
             inputs: Mapping[str, Any]
     ) -> Mapping[str, Mapping]:
-        """Returns the dictionary of folded arms for each given pose
+        """Returns the dictionary of Y-W stretches for each given pose
 
         Parameters
         ----------
@@ -260,8 +260,10 @@ class Node(AbstractNode):
                 'min_angle': {},
                 'reps': {}
             }
-        elif 'keypoints' not in inputs:
-            self.logger.warning(error_msg.format("'keypoints'"))
+        for key in ('keypoints', 'obj_attrs'):
+            if key not in inputs:
+                # One or more metadata inputs are missing
+                self.logger.warning(error_msg.format(f"'{key}'"))
 
         # Get required inputs from pipeline
         height, width, *_ = inputs['img'].shape

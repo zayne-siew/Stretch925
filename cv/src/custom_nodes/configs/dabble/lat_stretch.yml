@@ -1,0 +1,7 @@
+# Custom dabble node for handling the lat stretch
+
+# It takes in tracking IDs and keypoints from model.posenet
+input: ['img', 'keypoints', 'obj_attrs']
+
+# It outputs the angles and repetitions of the lat stretch
+output: ['max_angle', 'min_angle', 'reps']
