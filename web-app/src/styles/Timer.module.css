@@ -33,3 +33,9 @@
     min-width: 200px;
     background-color: #ababab;
 }
+
+.stretchViewContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

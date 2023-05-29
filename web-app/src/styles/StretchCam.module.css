@@ -1,0 +1,76 @@
+.breakTimer {
+    font-weight: 600;
+    font-size: 18px;
+    margin: 0;
+}
+
+.infoContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width:  80vw;
+    margin: 32px 0;
+}
+
+.leftBoxesContainer {
+    display: flex;
+    align-items: center;
+    gap: 48px;
+}
+
+.scoreBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.scoreBox p {
+    margin: 2px 0;
+    font-weight: 600;
+    color: var(--primary);
+    font-size: 22px;
+}
+
+.scoreBox h1 {
+    margin: 0;
+    font-size: 64px;
+}
+
+.timeBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+}
+
+.timeBox p {
+    margin: 2px 0;
+    font-weight: 600;
+    color: var(--primary);
+    font-size: 22px;
+}
+
+.timeBox h1 {
+    margin: 0;
+    font-size: 64px;
+}
+
+.stretchesBox {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.stretch {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
+}
+
+.stretch p {
+    font-weight: 500;
+}
+
+.stretch img {
+    height: 80px;
+}

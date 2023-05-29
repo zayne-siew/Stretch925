@@ -2,7 +2,8 @@ import styles from '@/styles/StretchIntro.module.css'
 
 const StretchIntro = ({
     numSessions,
-    breakSecondsLeft
+    breakSecondsLeft,
+    goToStretchView
 }) => {
     return (
         <>
@@ -23,7 +24,7 @@ const StretchIntro = ({
                     <img src="../assets/side-stretch.svg" alt="the side stretch" />
                 </div>
             </div>
-            <button className={styles.readyButton}>READY!</button>
+            <button className={styles.readyButton} onClick={() => goToStretchView()}>READY!</button>
         </>
     );
 }

@@ -3,11 +3,12 @@ import Pomodoro from '@/components/pomodoro';
 import styles from '@/styles/Timer.module.css'
 import { useEffect, useState } from 'react';
 import StretchIntro from './stretchIntro';
+import StretchCam from './stretchCam';
 
 const Timer = () => {
     const [isTimerActive, setIsTimerActive] = useState(false);
     const [originalSeconds, setOriginalSeconds] = useState(1500);
-    const [secondsLeft, setSecondsLeft] = useState(1500);
+    const [secondsLeft, setSecondsLeft] = useState(5);
     const [timer, setTimer] = useState();
     const [numSessions, setNumSessions] = useState(4);
 
@@ -16,7 +17,9 @@ const Timer = () => {
     const [breakSecondsLeft, setBreakSecondsLeft] = useState(300);
 
     const [isStretch, setIsStretch] = useState(false);
-    const [stretchView, setStretchView] = useState("intro")
+    const [stretchView, setStretchView] = useState("cam")
+    const [stretchTimer, setStretchTimer] = useState();
+    const [stretchSecondsLeft, setStretchSecondsLeft] = useState(60);
 
     const startTimer = () => {
         setIsTimerActive(true);
@@ -71,8 +74,26 @@ const Timer = () => {
     const initStretch = () => {
         setIsStretch(true);
         setStretchView("intro");
-
     }
+
+    const goToStretchView = () => {
+        setStretchView("cam");
+        startStretchTimer();
+    }
+
+    const startStretchTimer = () => {
+        const timer = setInterval(() => {
+            setStretchSecondsLeft((stretchSecondsLeft) => stretchSecondsLeft - 1);
+        }, 1000);
+        setStretchTimer(timer);
+    }
+
+    useEffect(() => {
+        if (stretchSecondsLeft === 0) {
+            clearInterval(stretchTimer);
+            setStretchSecondsLeft(60);
+        }
+    }, [stretchSecondsLeft, stretchTimer])
 
     return (
         <>
@@ -88,7 +109,11 @@ const Timer = () => {
                     (!isBreak) ?
                     <Pomodoro {...{ isTimerActive, setIsTimerActive, secondsLeft, setSecondsLeft, startTimer, stopTimer, numSessions }} /> :
                     (isStretch) ?
-                        <StretchIntro {...{ numSessions, breakSecondsLeft}}/> :
+                        <div className={styles.stretchViewContainer}>
+                        { (stretchView === "intro") ? <StretchIntro {...{ numSessions, breakSecondsLeft, goToStretchView}}/> : <></> }
+                        { (stretchView === "cam") ? <StretchCam {...{ numSessions, breakSecondsLeft, stretchSecondsLeft}}/> : <></>}
+                        </div>
+                         :
                         <BreakTime {...{numSessions, breakSecondsLeft, initStretch}}/>
                     
                 }
