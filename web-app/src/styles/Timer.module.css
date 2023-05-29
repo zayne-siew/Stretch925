@@ -1,0 +1,14 @@
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.logo img {
+    width: 60px;
+}
+
+.logo p {
+    font-size: 20px;
+    font-weight: 600;
+}
