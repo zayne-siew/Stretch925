@@ -1,0 +1,58 @@
+.timer {
+    background: var(--primary);
+    color: #ffffff;
+    width: 50vw;
+    min-width: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    margin: 48px 0;
+}
+
+.timer h1 {
+    font-size: 84px;
+    margin: 24px;
+}
+
+.startButton {
+    background: var(--primary);
+    border: none;
+    color: #ffffff;
+    font-size: 24px;
+    padding: 12px 48px;
+    border-radius: 8px;
+    font-weight: 500;
+    
+}
+
+.startButton:hover {
+    background-color: var(--primary-light);
+}
+
+.stopButton {
+    background: none;
+    border: 2px solid var(--primary);
+    color: var(--primary);
+    font-size: 24px;
+    padding: 12px 48px;
+    border-radius: 8px;
+    font-weight: 500;
+}
+
+.stopButton:hover {
+    background: var(--primary);
+    color: #ffffff;
+}
+
+.editButton {
+    background: none;
+    border: none;
+    color: var(--primary);
+    margin: 18px 0;
+    font-size: 18px;
+}
+
+.editButton:hover {
+    text-decoration: underline;
+}
