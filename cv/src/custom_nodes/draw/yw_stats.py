@@ -59,22 +59,23 @@ class Node(AbstractNode):
             # There must be an image to display
             self.logger.error(error_msg.format("'img'"))
             return {}
-        elif 'bboxes' not in inputs:
-            # One or more metadata inputs are missing
-            self.logger.warning(error_msg.format(f"'bboxes'"))
+        for key in ('bboxes', 'obj_attrs'):
+            if key not in inputs:
+                # One or more metadata inputs are missing
+                self.logger.warning(error_msg.format(f"'{key}'"))
 
         # Get required inputs from pipeline
         img = inputs['img']
         img_height, img_width, *_ = img.shape
+        all_ids = inputs.get('obj_attrs', {}).get('ids', [])
         bboxes = inputs.get('bboxes', [])
         max_angles = inputs.get('max_angle', {})
         min_angles = inputs.get('min_angle', {})
-        pos = inputs.get('pos', {})
         reps = inputs.get('reps', {})
 
         # Handle the detection of each person
         line_height = round(30 * _FONT_SCALE)  # height of each 'line' in pixels; 30 is arbitrary
-        for bbox, max_angle, min_angle, curr_pos, rep in zip(bboxes, max_angles, min_angles, pos, reps):
+        for curr_id, bbox in zip(all_ids, bboxes):
 
             # Obtain bounding box information
             x1, y1, x2, y2 = bbox
@@ -82,13 +83,16 @@ class Node(AbstractNode):
             x2, y = obtain_keypoint(x2, y2, img_width, img_height)
             x = (x1 + x2) >> 1
 
-            # Calculate and output the score
-            score = max(min(max_angle - min_angle, pi / 2), 0) / (pi / 2)
+            # Calculate the score
+            max_angle = max_angles.get(curr_id, 0)
+            min_angle = min_angles.get(curr_id, pi)
+
+            # Output the score
+            score = max(min(max_angle - min_angle, pi), 0) / pi
             message = '-' if max_angle < min_angle else f'{(score * 100):0.2f}%'
-            display_text(img, x, y - 3 * line_height, str(curr_pos), (255, 255, 255))
             display_text(img, x, y - 2 * line_height, f'Score: {message}',
                          (0, round(255 * score), round(255 * (1 - score))))
-            display_text(img, x, y - line_height, f'Reps: {rep}', (255, 255, 255))
+            display_text(img, x, y - line_height, f'Reps: {reps.get(curr_id, -1)}', (255, 255, 255))
 
         return {}
 

@@ -14,7 +14,7 @@ nodes:
 # Use the bounding box info to track and count detected humans
 - dabble.tracking
 # Draw the resultant bounding boxes and tracking IDs
-# - draw.bbox
+- draw.bbox
 - draw.tag:
     show: ["ids"]
 

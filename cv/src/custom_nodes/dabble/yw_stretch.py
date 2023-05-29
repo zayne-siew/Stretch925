@@ -16,7 +16,6 @@ peekingduck run
 
 # pylint: disable=logging-format-interpolation
 
-from collections import defaultdict
 from math import pi
 from typing import Any, Mapping, Optional, Tuple
 
@@ -61,10 +60,10 @@ class Node(AbstractNode):
         super().__init__(config, node_path=__name__, **kwargs)  # type: ignore
 
         # Implement trackers
-        self.curr_pos = defaultdict(lambda: self._SETUP)
-        self.max_angle = defaultdict(lambda: pi / 2)
-        self.min_angle = defaultdict(lambda: pi)
-        self.reps = defaultdict(int)
+        self.curr_pos = {} # defaultdict(lambda: self._SETUP)
+        self.max_angle = {} # defaultdict(lambda: pi / 2)
+        self.min_angle = {} # defaultdict(lambda: pi)
+        self.reps = {} # defaultdict(int)
 
     def _helper(
             self,
@@ -161,6 +160,10 @@ class Node(AbstractNode):
         left_valid = left_shoulder_x <= left_elbow_x <= left_wrist_x and left_wrist_y <= left_elbow_y <= left_shoulder_y
         right_valid = right_wrist_x <= right_elbow_x <= right_shoulder_x and right_wrist_y <= right_elbow_y <= right_shoulder_y
         if not (left_valid and right_valid):
+            self.logger.info(
+                'Either left or right arm is not in a valid position.' +
+                f'\nleft_valid: {left_valid}, right_valid: {right_valid}'
+            )
             return False
         
         threshold = 150 * pi / 180  # 150 deg
@@ -207,6 +210,10 @@ class Node(AbstractNode):
         left_valid = left_shoulder_x <= left_elbow_x <= left_wrist_x and left_wrist_y <= left_elbow_y
         right_valid = right_wrist_x <= right_elbow_x <= right_shoulder_x and right_wrist_y <= right_elbow_y
         if not (left_valid and right_valid):
+            self.logger.info(
+                'Either left or right arm is not in a valid position.' +
+                f'\nleft_valid: {left_valid}, right_valid: {right_valid}'
+            )
             return False
 
         threshold = 120 * pi / 180  # 120 deg
@@ -219,7 +226,7 @@ class Node(AbstractNode):
     def run(
             self,
             inputs: Mapping[str, Any]
-    ) -> Mapping[str, Mapping[int, int]]:
+    ) -> Mapping[str, Mapping]:
         """Returns the dictionary of folded arms for each given pose
 
         Parameters
@@ -248,7 +255,11 @@ class Node(AbstractNode):
         if 'img' not in inputs:
             # There must be an image to display
             self.logger.error(error_msg.format("'img'"))
-            return {'arms_folded': {}}  # type: ignore
+            return {
+                'max_angle': {},
+                'min_angle': {},
+                'reps': {}
+            }
         elif 'keypoints' not in inputs:
             self.logger.warning(error_msg.format("'keypoints'"))
 
@@ -279,6 +290,11 @@ class Node(AbstractNode):
             )
 
             # Update the relevant IDs
+            if curr_id not in self.curr_pos:
+                self.curr_pos[curr_id] = self._SETUP
+                self.max_angle[curr_id] = 0
+                self.min_angle[curr_id] = pi
+                self.reps[curr_id] = 0
             if self.curr_pos[curr_id] == self._W and self.is_y_pose(curr_id, *relevant_keypoints):
                 self.curr_pos[curr_id] = self._Y
             elif self.curr_pos[curr_id] != self._W and self.is_w_pose(curr_id, *relevant_keypoints):
@@ -288,7 +304,6 @@ class Node(AbstractNode):
         return {
             'max_angle': self.max_angle,
             'min_angle': self.min_angle,
-            'pos': self.curr_pos,
             'reps': self.reps
         }
 

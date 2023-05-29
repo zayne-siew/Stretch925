@@ -2,10 +2,10 @@
 
 input: [
   'bboxes',
+  'obj_attrs',
   'img',
   'max_angle',
   'min_angle',
-  'pos',
   'reps'
 ]
 
