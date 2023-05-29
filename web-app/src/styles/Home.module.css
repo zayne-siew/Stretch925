@@ -16,7 +16,6 @@
 
 .nav img {
   width: 60px;
-
 }
 
 .navButtonsContainer {
@@ -87,16 +86,68 @@
 .WhySectionH1 {
   background: var(--primary);
   text-align: center;
-  padding-top: 80px;
+  padding-top: 30px;
   font-size: 22px;
   width: 100vw;
 }
 
 .whySection {
   background: var(--primary);
-  height: 100vh;
+  font-size: 20px;
+  height: 20vh;
   width: 100vw;
-  padding-left: 10px;
-  padding-right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: top;
+  padding: 0 10px; /* Added padding to create space on the left and right */
+  box-sizing: border-box; /* Ensure padding is included in the total width */
 }
 
+.whySection p {
+  max-width: 90vw;
+  text-align: center;
+}
+
+.HowSectionH1 {
+  text-align: center;
+  padding-top: 50px;
+  font-size: 22px;
+  width: 100vw;
+}
+
+.HowSection {
+  height: 100vh;
+  width: 100vw;
+}
+
+.resizedImage {
+  width: 400px;
+  height: 300px;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  margin-bottom: 100px;
+}
+
+.group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.itemContent {
+  margin-top: 10px;
+}
+
+.lastImage {
+  width: 300px;
+  height: 250px;
+}
