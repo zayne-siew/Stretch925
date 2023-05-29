@@ -1,6 +1,6 @@
-"""Docstring for the yw_stats.py module
+"""Docstring for the lat_stats.py module
 
-This module implements a custom draw Node class for handling the statistics of the Y-W stretch.
+This module implements a custom draw Node class for handling the statistics of the lat stretch.
 
 Usage
 -----
@@ -85,8 +85,8 @@ class Node(AbstractNode):
 
             # Calculate the score
             max_angle = max_angles.get(curr_id, 0)
-            min_angle = min_angles.get(curr_id, pi)
-            score = max(min(max_angle - min_angle, pi), 0) / pi
+            min_angle = min_angles.get(curr_id, pi / 4)
+            score = max(min(max_angle - min_angle, pi / 4), 0) / (pi / 4)
 
             # Output the score
             message = '-' if max_angle < min_angle else f'{(score * 100):0.2f}%'
