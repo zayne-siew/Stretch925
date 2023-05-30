@@ -1,4 +1,5 @@
 import styles from '@/styles/Pomodoro.module.css'
+import EditSessionsModal from './editSessionsModal'
 
 const Pomodoro = ({
     isTimerActive, 
@@ -8,7 +9,8 @@ const Pomodoro = ({
     startTimer, 
     stopTimer,
     numSessions,
-    skipTimer
+    skipTimer,
+    setNumSessions
 }) => {
     return ( 
         <>
@@ -27,7 +29,7 @@ const Pomodoro = ({
             
         }
         
-        {(!isTimerActive) ? <button className={styles.editButton}>Edit Sessions</button> : <></>}
+        {(!isTimerActive) ? <EditSessionsModal  {...{setNumSessions}}/>:<></>}
         
         </>
        
@@ -35,3 +37,4 @@ const Pomodoro = ({
 }
  
 export default Pomodoro;
+

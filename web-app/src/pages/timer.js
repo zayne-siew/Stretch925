@@ -147,7 +147,7 @@ const Timer = () => {
                 </div>
                 {
                     (!isBreak) ?
-                        <Pomodoro {...{ isTimerActive, setIsTimerActive, secondsLeft, setSecondsLeft, startTimer, stopTimer, numSessions, skipTimer }} /> :
+                        <Pomodoro {...{ isTimerActive, setIsTimerActive, secondsLeft, setSecondsLeft, startTimer, stopTimer, numSessions, skipTimer, setNumSessions }} /> :
                         (isStretch) ?
                             <div className={styles.stretchViewContainer}>
                                 {(stretchView === "intro") ? <StretchIntro {...{ numSessions, breakSecondsLeft, goToStretchView }} /> : <></>}

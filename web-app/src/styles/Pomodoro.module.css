@@ -66,14 +66,3 @@
     color: #ffffff;
 }
 
-.editButton {
-    background: none;
-    border: none;
-    color: var(--primary);
-    margin: 18px 0;
-    font-size: 18px;
-}
-
-.editButton:hover {
-    text-decoration: underline;
-}

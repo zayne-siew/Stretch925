@@ -1,0 +1,40 @@
+.editButton {
+    background: none;
+    border: none;
+    color: var(--primary);
+    margin: 18px 0;
+    font-size: 18px;
+}
+
+.editButton:hover {
+    text-decoration: underline;
+}
+
+.modal {
+    height: 30vh;
+    background: #ffffff;
+    color: var(--primary);
+    padding: 30px;
+    border-radius: 8px;
+}
+
+.selectionContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+.option {
+    background: var(--primary);
+    color: #ffffff;
+    height: 70px;
+    width: 80px;
+    border: none;
+    border-radius: 8px;
+    font-size: 24px;
+}
+
+.option:hover {
+    background: var(--primary-light);
+}
