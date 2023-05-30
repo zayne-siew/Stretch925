@@ -31,15 +31,15 @@ Some of these stretches currently supported are:
 
 - **Y-W Stretch** - Extend both arms straight up above your head. Form a Y shape. Next, tuck both arms to your stomach area and squeeze your shoulder blades together. Form a “W” shape.
   <p align="center">
-   <img src= https://github.com/zayne-siew/Stretch925/assets/87000020/066eab37-ccbc-4968-82b4-0c5974eaf8be.gif alt="Sample Video 1" width=20% height=auto/>
+   <img src= https://github.com/zayne-siew/Stretch925/assets/87000020/6971af29-323f-47c9-a990-00079084771c.gif alt="Sample Video 1" width=20% height=auto/>
   </p>
 - **Neck Stretch** - Place one hand on the opposite side of your head and tuck the other hand behind your back. Bring the head down towards your shoulder. Hold for 10 seconds.
   <p align="center">
-   <img src= https://github.com/zayne-siew/Stretch925/assets/87000020/4c0fca7b-ef4f-4ae9-8a36-7678cdd33263.gif alt="Sample Video 2" width=20% height=auto/>
+   <img src= https://github.com/zayne-siew/Stretch925/assets/87000020/34fd5a5f-d421-422f-b31e-f80b31a031ef.gif alt="Sample Video 2" width=20% height=auto/>
   </p>
 - **Side Stretch** - Extend both arms straight up above your head. Grab your right hand with left hand. Assist with your left hand and stretch to the side.
   <p align="center">
-   <img src= https://github.com/zayne-siew/Stretch925/assets/87000020/53a08eea-f096-4452-9617-33bf8e289737.gif alt="Sample Video 3" width=20% height=auto/>
+   <img src= https://github.com/zayne-siew/Stretch925/assets/87000020/4eed5f47-7c92-4ea9-bcc5-d92d8244427f.gif alt="Sample Video 3" width=20% height=auto/>
   </p>
 
 ### Boosts Productivity
@@ -99,12 +99,12 @@ All of these mockup images can be accessed in the **figma-mockups.zip** file in 
 
 ### Home - During Break Session
 <p float="left">
-  <img src="https://github.com/zayne-siew/Stretch925/assets/87000020/3f33bc76-3483-4eb8-a1d5-3f95eac0b83d.png" width=20% height=auto/ />
-  <img src="https://github.com/zayne-siew/Stretch925/assets/87000020/0ec790b1-59df-4805-b041-202de23141b7.png" width=20% height=auto/ />
-  <img src="https://github.com/zayne-siew/Stretch925/assets/87000020/6f5d249f-a174-456d-b60c-90686b1daf85.png" width=20% height=auto/ />
-  <img src="https://github.com/zayne-siew/Stretch925/assets/87000020/14dfa9a5-73c7-4803-bf9a-39a58d22a01d.png" width=20% height=auto/ />
-  <img src="https://github.com/zayne-siew/Stretch925/assets/87000020/068b6b39-3130-4891-918b-b4fcdfbbd419.png" width=20% height=auto/ />
-  <img src="https://github.com/zayne-siew/Stretch925/assets/87000020/f33f18e2-4680-4d41-9c67-0a3c9c99b11a.png" width=20% height=auto/ />
+  <img src="https://github.com/zayne-siew/Stretch925/assets/87000020/a19f5253-71c0-42ea-a00b-96c130648d7c.png" width=20% height=auto/ />
+  <img src="https://github.com/zayne-siew/Stretch925/assets/87000020/76c771c5-aa6b-4911-b9c4-5783191bb679.png" width=20% height=auto/ />
+  <img src="https://github.com/zayne-siew/Stretch925/assets/87000020/96ce711a-ae65-4f3f-99e1-09a2ddddb2ec.png" width=20% height=auto/ />
+  <img src="https://github.com/zayne-siew/Stretch925/assets/87000020/d840d5a7-f176-4a2c-8997-323e7e256e13.png" width=20% height=auto/ />
+  <img src="https://github.com/zayne-siew/Stretch925/assets/87000020/748b0fe1-8a7f-4df2-bbee-96b56b2e43df.png" width=20% height=auto/ />
+  <img src="https://github.com/zayne-siew/Stretch925/assets/87000020/5befa4fa-9301-423b-bdfc-cabea107b660.png" width=20% height=auto/ />
 </p>
 
 ### Ranking
@@ -125,3 +125,6 @@ All of these mockup images can be accessed in the **figma-mockups.zip** file in 
 
 ## Acknowledgements
 This project is an undertaking of the LifeHack 2023 organised by NUS Students' Computing Club, under the Theme: Revolutionizing the Workplace.
+
+
+
