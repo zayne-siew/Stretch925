@@ -6,6 +6,7 @@ import StretchIntro from '../components/stretchIntro';
 import StretchCam from '../components/stretchCam';
 import { IoMenu } from "react-icons/io5";
 import StretchDone from '../components/stretchDone';
+import Link from 'next/link';
 
 
 const Timer = () => {
@@ -45,10 +46,10 @@ const Timer = () => {
             setSecondsLeft(0);
         } else if (timerType === "break") {
             setBreakSecondsLeft(0);
-        } 
+        }
         else if (timerType === "stretch") {
             setStretchSecondsLeft(0);
-        } 
+        }
     }
 
     useEffect(() => {
@@ -121,7 +122,7 @@ const Timer = () => {
             clearInterval(stretchTimer);
             setStretchSecondsLeft(60);
             goToDoneView();
-            
+
         }
     }, [stretchSecondsLeft, stretchTimer])
 
@@ -131,9 +132,9 @@ const Timer = () => {
             <div className={styles.main}>
                 <div className={styles.header}>
                     <div className={styles.headerMenu}>
-                        <button className={styles.hamburgerMenuButton}>
-                        <IoMenu />
-                        </button>
+                        <Link href="/"><button className={styles.hamburgerMenuButton}>
+                            <IoMenu />
+                        </button></Link>
                         <div className={styles.logo}>
                             <img src="../assets/logo.svg" alt="" />
                             <p>Stretch925</p>
@@ -154,10 +155,10 @@ const Timer = () => {
                                 {(stretchView === "cam") ? <StretchCam {...{ numSessions, breakSecondsLeft, stretchSecondsLeft, goToDoneView, skipTimer }} /> : <></>}
                             </div>
                             :
-                        (isStretchDone) ?
-                            <StretchDone {...{numSessions, breakSecondsLeft, skipTimer}}/>
-                        :
-                            <BreakTime {...{ numSessions, breakSecondsLeft, initStretch }} />
+                            (isStretchDone) ?
+                                <StretchDone {...{ numSessions, breakSecondsLeft, skipTimer }} />
+                                :
+                                <BreakTime {...{ numSessions, breakSecondsLeft, initStretch }} />
 
                 }
             </div>
