@@ -78,6 +78,8 @@ npm run dev
 ````
 
 ## Gallery
+All of these mockup images can be accessed in the **figma-mockups.zip** file in the repository.
+
 ### Sign In
 <p align="left">
    <img src= https://github.com/zayne-siew/Stretch925/assets/87000020/64f8ebb4-f0d8-40a2-bc2f-0330a1910a7b.png alt="Sign In" width=20% height=auto/>
