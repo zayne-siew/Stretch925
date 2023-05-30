@@ -1,0 +1,35 @@
+.mainContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 70vw;
+    margin: 48px 0;
+}
+
+.scoreCard {
+    background:  #ffffff;
+    color: var(--primary);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 24px;
+    border-radius: 8px;
+}
+
+.scoreCard h1 {
+    font-size: 64px;
+    margin: 12px 0;
+}
+
+.timerContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.timerContainer h1 {
+    font-size: 64px;
+    margin: 18px 0;
+}

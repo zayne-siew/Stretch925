@@ -5,12 +5,13 @@ import { useEffect, useState } from 'react';
 import StretchIntro from './stretchIntro';
 import StretchCam from './stretchCam';
 import { IoMenu } from "react-icons/io5";
+import StretchDone from './stretchDone';
 
 
 const Timer = () => {
     const [isTimerActive, setIsTimerActive] = useState(false);
     const [originalSeconds, setOriginalSeconds] = useState(1500);
-    const [secondsLeft, setSecondsLeft] = useState(5);
+    const [secondsLeft, setSecondsLeft] = useState(1500);
     const [timer, setTimer] = useState();
     const [numSessions, setNumSessions] = useState(4);
 
@@ -19,9 +20,10 @@ const Timer = () => {
     const [breakSecondsLeft, setBreakSecondsLeft] = useState(300);
 
     const [isStretch, setIsStretch] = useState(false);
-    const [stretchView, setStretchView] = useState("cam")
+    const [stretchView, setStretchView] = useState("intro")
     const [stretchTimer, setStretchTimer] = useState();
     const [stretchSecondsLeft, setStretchSecondsLeft] = useState(60);
+    const [isStretchDone, setIsStretchDone] = useState(false);
 
     const startTimer = () => {
         setIsTimerActive(true);
@@ -70,6 +72,9 @@ const Timer = () => {
             clearInterval(breakTimer);
             setIsBreak(false);
             setBreakSecondsLeft(300);
+            if (numSessions > 1) {
+                startTimer();
+            }
         }
     }, [breakSecondsLeft, breakTimer])
 
@@ -83,6 +88,13 @@ const Timer = () => {
         startStretchTimer();
     }
 
+    const goToDoneView = () => {
+        setStretchView("done");
+        setIsStretchDone(true);
+        setIsStretch(false);
+        
+    }
+
     const startStretchTimer = () => {
         const timer = setInterval(() => {
             setStretchSecondsLeft((stretchSecondsLeft) => stretchSecondsLeft - 1);
@@ -94,8 +106,10 @@ const Timer = () => {
         if (stretchSecondsLeft === 0) {
             clearInterval(stretchTimer);
             setStretchSecondsLeft(60);
+            goToDoneView();
         }
     }, [stretchSecondsLeft, stretchTimer])
+    
 
     return (
         <>
@@ -122,9 +136,12 @@ const Timer = () => {
                         (isStretch) ?
                             <div className={styles.stretchViewContainer}>
                                 {(stretchView === "intro") ? <StretchIntro {...{ numSessions, breakSecondsLeft, goToStretchView }} /> : <></>}
-                                {(stretchView === "cam") ? <StretchCam {...{ numSessions, breakSecondsLeft, stretchSecondsLeft }} /> : <></>}
+                                {(stretchView === "cam") ? <StretchCam {...{ numSessions, breakSecondsLeft, stretchSecondsLeft, goToDoneView }} /> : <></>}
                             </div>
                             :
+                        (isStretchDone) ?
+                            <StretchDone {...{numSessions, breakSecondsLeft,}}/>
+                        :
                             <BreakTime {...{ numSessions, breakSecondsLeft, initStretch }} />
 
                 }
