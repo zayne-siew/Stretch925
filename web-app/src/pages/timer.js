@@ -4,6 +4,8 @@ import styles from '@/styles/Timer.module.css'
 import { useEffect, useState } from 'react';
 import StretchIntro from './stretchIntro';
 import StretchCam from './stretchCam';
+import { IoMenu } from "react-icons/io5";
+
 
 const Timer = () => {
     const [isTimerActive, setIsTimerActive] = useState(false);
@@ -99,23 +101,32 @@ const Timer = () => {
         <>
             <div className={styles.main}>
                 <div className={styles.header}>
-                    <div className={styles.logo}>
-                        <img src="../assets/logo.svg" alt="" />
-                        <p>Stretch925</p>
+                    <div className={styles.headerMenu}>
+                        <button className={styles.hamburgerMenuButton}>
+                        <IoMenu />
+                        </button>
+                        <div className={styles.logo}>
+                            <img src="../assets/logo.svg" alt="" />
+                            <p>Stretch925</p>
+                        </div>
+                        <div className={styles.pointsBox}>
+                            <p>My points: 88</p>
+                        </div>
                     </div>
+
                     <div className={styles.divider}></div>
                 </div>
                 {
                     (!isBreak) ?
-                    <Pomodoro {...{ isTimerActive, setIsTimerActive, secondsLeft, setSecondsLeft, startTimer, stopTimer, numSessions }} /> :
-                    (isStretch) ?
-                        <div className={styles.stretchViewContainer}>
-                        { (stretchView === "intro") ? <StretchIntro {...{ numSessions, breakSecondsLeft, goToStretchView}}/> : <></> }
-                        { (stretchView === "cam") ? <StretchCam {...{ numSessions, breakSecondsLeft, stretchSecondsLeft}}/> : <></>}
-                        </div>
-                         :
-                        <BreakTime {...{numSessions, breakSecondsLeft, initStretch}}/>
-                    
+                        <Pomodoro {...{ isTimerActive, setIsTimerActive, secondsLeft, setSecondsLeft, startTimer, stopTimer, numSessions }} /> :
+                        (isStretch) ?
+                            <div className={styles.stretchViewContainer}>
+                                {(stretchView === "intro") ? <StretchIntro {...{ numSessions, breakSecondsLeft, goToStretchView }} /> : <></>}
+                                {(stretchView === "cam") ? <StretchCam {...{ numSessions, breakSecondsLeft, stretchSecondsLeft }} /> : <></>}
+                            </div>
+                            :
+                            <BreakTime {...{ numSessions, breakSecondsLeft, initStretch }} />
+
                 }
             </div>
         </>

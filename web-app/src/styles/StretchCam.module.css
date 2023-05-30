@@ -1,7 +1,22 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
 .breakTimer {
     font-weight: 600;
     font-size: 18px;
     margin: 0;
+}
+
+.camContainer {
+    position: relative !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .infoContainer {

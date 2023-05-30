@@ -10,6 +10,31 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100vw;
+}
+
+.headerMenu {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+
+.hamburgerMenuButton {
+    background: var(--primary);
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 50px;
+    color: #ffffff;
+    font-size: 28px;
+    border-radius: 50%;
+}
+
+.hamburgerMenuButton:hover {
+    background: var(--primary-light);
 }
 
 .logo {
@@ -25,6 +50,14 @@
 .logo p {
     font-size: 22px;
     font-weight: 600;
+}
+
+.pointsBox {
+    background: #ffffff;
+    padding: 4px 24px;
+    border-radius: 8px;
+    font-weight: 500;
+
 }
 
 .divider {

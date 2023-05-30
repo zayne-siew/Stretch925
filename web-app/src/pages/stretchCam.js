@@ -1,4 +1,5 @@
 import styles from '@/styles/StretchCam.module.css'
+import Webcam from 'react-webcam';
 
 const StretchCam = ({
     numSessions,
@@ -6,9 +7,22 @@ const StretchCam = ({
     stretchSecondsLeft
 }) => {
     return (
-        <>
+        <div className={styles.main}>
             <p>Number of sessions left: {numSessions}</p>
             <p className={styles.breakTimer}>Break time left: {Math.floor(breakSecondsLeft / 60)}:{(breakSecondsLeft - (Math.floor(breakSecondsLeft / 60) * 60) < 10) ? 0 : <></>}{breakSecondsLeft - (Math.floor(breakSecondsLeft / 60) * 60)}</p>
+            <div className={styles.camContainer}>
+                <Webcam style={{
+                    width: 640, height: 480, position: "absolute",
+                  
+                    zIndex: 1
+                }} />
+                <canvas style={{
+                    width: 640, height: 480,
+                    
+                    zIndex: 2
+                }} />
+            </div>
+
             <div className={styles.infoContainer}>
                 <div className={styles.leftBoxesContainer}>
                     <div className={styles.scoreBox}>
@@ -37,7 +51,7 @@ const StretchCam = ({
                 </div>
             </div>
 
-        </>
+        </div>
     );
 }
 
