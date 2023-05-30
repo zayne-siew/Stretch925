@@ -1,6 +1,6 @@
 <br />
 
-<img src="https://github.com/zayne-siew/Stretch925/assets/87000020/601a20a2-e419-4033-9c6c-236fdd1348f7.svg">
+<img src="https://github.com/zayne-siew/Stretch925/assets/87000020/9a45ff68-f9a0-4dae-ac35-49e1c908a8c9.svg">
 
 <p align="center">
   <img src=https://img.shields.io/badge/python-3.8%20%7C%203.9-blue.svg alt="Python Versions"/>
@@ -82,19 +82,19 @@ All of these mockup images can be accessed in the **figma-mockups.zip** file in 
 
 ### Sign In
 <p align="left">
-   <img src= https://github.com/zayne-siew/Stretch925/assets/87000020/64f8ebb4-f0d8-40a2-bc2f-0330a1910a7b.png alt="Sign In" width=20% height=auto/>
+   <img src= https://github.com/zayne-siew/Stretch925/assets/87000020/faadc74e-00f0-41e7-af42-d72dc0dc7604.png alt="Sign In" width=20% height=auto/>
 </p>
 
 ### View Stretches
 <p align="left">
-   <img src= https://github.com/zayne-siew/Stretch925/assets/87000020/f93dd013-d083-4abb-b850-3b17c8bd712a.png alt="View Stretches" width=20% height=auto/>
+   <img src= https://github.com/zayne-siew/Stretch925/assets/87000020/90f54ef3-3104-48f1-9e49-e2e9f768a392.png alt="View Stretches" width=20% height=auto/>
 </p>
 
 ### Home - During Work Session
 <p float="left">
-  <img src="https://github.com/zayne-siew/Stretch925/assets/87000020/e6995f1f-6cfe-4184-aa6f-fa0ac315c0f1.png" width=20% height=auto/ />
-  <img src="https://github.com/zayne-siew/Stretch925/assets/87000020/0bd6f123-96a6-47ef-9a18-fa26b8b392a5.png" width=20% height=auto/ />
-  <img src="https://github.com/zayne-siew/Stretch925/assets/87000020/a1dd22f3-8647-4deb-bcee-bb8156cfc018.png" width=20% height=auto/ />
+  <img src="https://github.com/zayne-siew/Stretch925/assets/87000020/dd448ca6-6aac-4ba4-a684-06d584fb0a5f.png" width=20% height=auto/ />
+  <img src="https://github.com/zayne-siew/Stretch925/assets/87000020/8ba5a243-cc14-4674-a1eb-bfcc880f732d.png" width=20% height=auto/ />
+  <img src="https://github.com/zayne-siew/Stretch925/assets/87000020/1380303f-d330-49a9-92b3-5c6036afd6b8.png" width=20% height=auto/ />
 </p>
 
 ### Home - During Break Session
@@ -109,18 +109,18 @@ All of these mockup images can be accessed in the **figma-mockups.zip** file in 
 
 ### Ranking
 <p float="left">
-  <img src="https://github.com/zayne-siew/Stretch925/assets/87000020/3ba58262-cdb3-4bec-b579-8ca94156b3a0.png" width=20% height=auto/ />
-  <img src="https://github.com/zayne-siew/Stretch925/assets/87000020/c0ba4f41-6643-4410-994e-8da4bbb5490a.png" width=20% height=auto/ />
+  <img src="https://github.com/zayne-siew/Stretch925/assets/87000020/cc985b6b-9501-47bd-a24e-70b1b40c3f1d.png" width=20% height=auto/ />
+  <img src="https://github.com/zayne-siew/Stretch925/assets/87000020/e99b550b-39b5-49f6-ba19-9823b9276da7.png" width=20% height=auto/ />
 </p>
 
 ### Activity
 <p align="left">
-   <img src= https://github.com/zayne-siew/Stretch925/assets/87000020/46ba2d14-9594-49c2-b1c2-27adfe6b9e12.png alt="Activity" width=20% height=auto/>
+   <img src= https://github.com/zayne-siew/Stretch925/assets/87000020/61a9300c-941a-4a5f-b7ea-f1a7bc348352.png alt="Activity" width=20% height=auto/>
 </p>
 
 ### Profile
 <p align="left">
-   <img src= https://github.com/zayne-siew/Stretch925/assets/87000020/08063d78-5345-4e3b-9a2d-d7947e7135ae.png alt="Profile" width=20% height=auto/>
+   <img src= https://github.com/zayne-siew/Stretch925/assets/87000020/ffe7ff0a-9867-4b9f-9fc8-0ca08adeda0f.png alt="Profile" width=20% height=auto/>
 </p>
 
 ## Acknowledgements
