@@ -33,3 +33,18 @@
     font-size: 64px;
     margin: 18px 0;
 }
+
+.skipButton {
+    background: none;
+    border: 2px solid var(--primary);
+    color: var(--primary);
+    font-size: 24px;
+    padding: 12px 48px;
+    border-radius: 8px;
+    font-weight: 500;
+}
+
+.skipButton:hover {
+    background: var(--primary);
+    color: #ffffff;
+}

@@ -12,7 +12,7 @@
 }
 
 .camContainer {
-    position: relative !important;
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -88,4 +88,19 @@
 
 .stretch img {
     height: 80px;
+}
+
+.skipButton {
+    background: none;
+    border: 2px solid var(--primary);
+    color: var(--primary);
+    font-size: 24px;
+    padding: 12px 48px;
+    border-radius: 8px;
+    font-weight: 500;
+}
+
+.skipButton:hover {
+    background: var(--primary);
+    color: #ffffff;
 }

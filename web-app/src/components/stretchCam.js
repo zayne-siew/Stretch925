@@ -3,12 +3,13 @@ import Webcam from 'react-webcam';
 import React, { useRef } from "react";
 import * as tf from "@tensorflow/tfjs";
 import * as posenet from "@tensorflow-models/posenet";
-import { drawKeypoints, drawSkeleton } from "./utilities";
+import { drawKeypoints, drawSkeleton } from "../pages/utilities";
 
 const StretchCam = ({
     numSessions,
     breakSecondsLeft,
-    stretchSecondsLeft
+    stretchSecondsLeft,
+    skipTimer
 }) => {
 
     const webcamRef = useRef(null);
@@ -69,10 +70,6 @@ const StretchCam = ({
                     ref={webcamRef}
                     style={{
                         position: "absolute",
-                        marginLeft: "auto",
-                        marginRight: "auto",
-                        left: 0,
-                        right: 0,
                         textAlign: "center",
                         zindex: 1,
                         width: 640,
@@ -82,11 +79,6 @@ const StretchCam = ({
                 <canvas
                     ref={canvasRef}
                     style={{
-                        position: "absolute",
-                        marginLeft: "auto",
-                        marginRight: "auto",
-                        left: 0,
-                        right: 0,
                         textAlign: "center",
                         zindex: 2,
                         width: 640,
@@ -105,6 +97,7 @@ const StretchCam = ({
                         <p>Time Left</p>
                         <h1>{stretchSecondsLeft}</h1>
                     </div>
+                    <button className={styles.skipButton} onClick={()=>skipTimer("stretch")}>SKIP</button>
                 </div>
 
                 <div className={styles.stretchesBox}>

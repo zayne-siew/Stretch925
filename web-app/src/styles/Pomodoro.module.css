@@ -30,7 +30,13 @@
     background-color: var(--primary-light);
 }
 
-.stopButton {
+.stopSkipContainer {
+    display: flex;
+    align-items: center;
+    gap: 42px;
+}
+
+.skipButton {
     background: none;
     border: 2px solid var(--primary);
     color: var(--primary);
@@ -40,8 +46,23 @@
     font-weight: 500;
 }
 
-.stopButton:hover {
+.skipButton:hover {
     background: var(--primary);
+    color: #ffffff;
+}
+
+.stopButton {
+    background: none;
+    border: 2px solid #000000;
+    color: #000000;
+    font-size: 24px;
+    padding: 12px 48px;
+    border-radius: 8px;
+    font-weight: 500;
+}
+
+.stopButton:hover {
+    background: #000000;
     color: #ffffff;
 }
 

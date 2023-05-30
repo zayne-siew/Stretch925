@@ -8,6 +8,7 @@ const Pomodoro = ({
     startTimer, 
     stopTimer,
     numSessions,
+    skipTimer
 }) => {
     return ( 
         <>
@@ -19,10 +20,14 @@ const Pomodoro = ({
         {
             (!isTimerActive) ? 
             <button className={styles.startButton} onClick={() => startTimer()}>START</button> :
-            <button className={styles.stopButton} onClick={() => stopTimer()}>END</button>
+            <div className={styles.stopSkipContainer}>
+                <button className={styles.skipButton} onClick={() => skipTimer("normal")}>SKIP</button>
+                <button className={styles.stopButton} onClick={() => stopTimer()}>END</button>
+            </div>
+            
         }
         
-        {(!isTimerActive) ? <button className={styles.editButton}>Edit Timer</button> : <></>}
+        {(!isTimerActive) ? <button className={styles.editButton}>Edit Sessions</button> : <></>}
         
         </>
        

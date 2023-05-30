@@ -2,10 +2,10 @@ import BreakTime from '@/components/breakTime';
 import Pomodoro from '@/components/pomodoro';
 import styles from '@/styles/Timer.module.css'
 import { useEffect, useState } from 'react';
-import StretchIntro from './stretchIntro';
-import StretchCam from './stretchCam';
+import StretchIntro from '../components/stretchIntro';
+import StretchCam from '../components/stretchCam';
 import { IoMenu } from "react-icons/io5";
-import StretchDone from './stretchDone';
+import StretchDone from '../components/stretchDone';
 
 
 const Timer = () => {
@@ -27,10 +27,10 @@ const Timer = () => {
 
     const startTimer = () => {
         setIsTimerActive(true);
-        const timer = setInterval(() => {
+        const timerA = setInterval(() => {
             setSecondsLeft((secondsLeft) => secondsLeft - 1);
         }, 1000);
-        setTimer(timer);
+        setTimer(timerA);
     };
 
     const stopTimer = () => {
@@ -38,6 +38,17 @@ const Timer = () => {
         setIsTimerActive(false);
         setSecondsLeft(originalSeconds);
         setNumSessions(4);
+    }
+
+    const skipTimer = (timerType) => {
+        if (timerType === "normal") {
+            setSecondsLeft(0);
+        } else if (timerType === "break") {
+            setBreakSecondsLeft(0);
+        } 
+        else if (timerType === "stretch") {
+            setStretchSecondsLeft(0);
+        } 
     }
 
     useEffect(() => {
@@ -61,10 +72,10 @@ const Timer = () => {
     }, [timer]);
 
     const startBreakTimer = () => {
-        const timer = setInterval(() => {
+        const timerB = setInterval(() => {
             setBreakSecondsLeft((breakSecondsLeft) => breakSecondsLeft - 1);
         }, 1000);
-        setBreakTimer(timer);
+        setBreakTimer(timerB);
     }
 
     useEffect(() => {
@@ -72,8 +83,11 @@ const Timer = () => {
             clearInterval(breakTimer);
             setIsBreak(false);
             setBreakSecondsLeft(300);
-            if (numSessions > 1) {
+            setIsStretchDone(false);
+            if (numSessions > 0) {
                 startTimer();
+            } else {
+                setNumSessions(4);
             }
         }
     }, [breakSecondsLeft, breakTimer])
@@ -89,17 +103,17 @@ const Timer = () => {
     }
 
     const goToDoneView = () => {
-        setStretchView("done");
+        setStretchView("intro");
         setIsStretchDone(true);
         setIsStretch(false);
 
     }
 
     const startStretchTimer = () => {
-        const timer = setInterval(() => {
+        const timerC = setInterval(() => {
             setStretchSecondsLeft((stretchSecondsLeft) => stretchSecondsLeft - 1);
         }, 1000);
-        setStretchTimer(timer);
+        setStretchTimer(timerC);
     }
 
     useEffect(() => {
@@ -107,6 +121,7 @@ const Timer = () => {
             clearInterval(stretchTimer);
             setStretchSecondsLeft(60);
             goToDoneView();
+            
         }
     }, [stretchSecondsLeft, stretchTimer])
 
@@ -132,15 +147,15 @@ const Timer = () => {
                 </div>
                 {
                     (!isBreak) ?
-                        <Pomodoro {...{ isTimerActive, setIsTimerActive, secondsLeft, setSecondsLeft, startTimer, stopTimer, numSessions }} /> :
+                        <Pomodoro {...{ isTimerActive, setIsTimerActive, secondsLeft, setSecondsLeft, startTimer, stopTimer, numSessions, skipTimer }} /> :
                         (isStretch) ?
                             <div className={styles.stretchViewContainer}>
                                 {(stretchView === "intro") ? <StretchIntro {...{ numSessions, breakSecondsLeft, goToStretchView }} /> : <></>}
-                                {(stretchView === "cam") ? <StretchCam {...{ numSessions, breakSecondsLeft, stretchSecondsLeft, goToDoneView }} /> : <></>}
+                                {(stretchView === "cam") ? <StretchCam {...{ numSessions, breakSecondsLeft, stretchSecondsLeft, goToDoneView, skipTimer }} /> : <></>}
                             </div>
                             :
                         (isStretchDone) ?
-                            <StretchDone {...{numSessions, breakSecondsLeft,}}/>
+                            <StretchDone {...{numSessions, breakSecondsLeft, skipTimer}}/>
                         :
                             <BreakTime {...{ numSessions, breakSecondsLeft, initStretch }} />
 
