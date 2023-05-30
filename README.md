@@ -10,7 +10,7 @@
 </p>
 
 <h4 align="center">
-  <a href="">Video</a>
+  <a href="https://youtu.be/Kcc65jPpa4Y">Video</a>
   <span> · </span>
   <a href="">Documentation</a>
   <span> · </span>
