@@ -15,8 +15,7 @@
 
 ---
 
-**Stretch925** is an application that rewards fatigued corporate workers for taking their much-needed breaks and promotes a healthy stretching habit through gamification. It is available both on web and mobile.
-All users must perform a one-time Singpass login to sign up for Stretch925.
+**Stretch925** is an application that utilizes gamification and computer vision to promote a healthy stretching habit among corporate workers. An accessible, interactive, and smart digital solution, Stretch925 incentivises and rewards corporate workers for taking care of their well-being.
 
 ## Features
 
