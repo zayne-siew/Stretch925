@@ -4,15 +4,11 @@
 
 <p align="center">
   <img src=https://img.shields.io/badge/python-3.8%20%7C%203.9-blue.svg alt="Python Versions"/>
-  <img src=https://github.com/zayne-siew/Stretch925/actions/workflows/pylint.yml/badge.svg alt="Pylint" />
-  <img src=https://github.com/zayne-siew/Stretch925/actions/workflows/ci.yml/badge.svg alt="Unit Tests" />
   <a href=http://hits.dwyl.com/zayne-siew/Stretch925><img src=https://hits.dwyl.com/zayne-siew/Stretch925.svg?style=flat-square&show=unique alt="Hit Count" /></a>
 </p>
 
 <h4 align="center">
   <a href="https://youtu.be/Kcc65jPpa4Y">Video</a>
-  <span> · </span>
-  <a href="">Documentation</a>
   <span> · </span>
   <a href="https://github.com/zayne-siew/Stretch925/issues">Report a bug</a>
 </h4>
