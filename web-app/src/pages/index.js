@@ -2,11 +2,25 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
+import Link from 'next/link'
+import { useRef } from 'react'
 
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
+
+  const whyRef = useRef();
+  const howRef = useRef();
+
+  const scrollTo = (section) => {
+    if (section === "why") {
+      whyRef.current.scrollIntoView();
+    } else if (section === "how") {
+      howRef.current.scrollIntoView();
+    }
+  }
+
   return (
     <>
       <Head>
@@ -18,8 +32,8 @@ export default function Home() {
       <div className={styles.nav}>
         <img src="../assets/logo.svg" alt=""/>
         <div className={styles.navButtonsContainer}>
-          <button className={styles.navButton}>Why Stretch925?</button>
-          <button className={styles.navButton}>How it works</button>
+          <button className={styles.navButton} onClick={() => scrollTo("why")}>WhyStretch925?</button>
+          <button className={styles.navButton} onClick={() => scrollTo("how")}>How it works</button>
           <button className={`${styles.navButton} ${styles.loginButton}`}>Login</button>
         </div>
       </div>
@@ -27,17 +41,17 @@ export default function Home() {
         <div className={styles.banner}>
           <div className={styles.bannerText}>
             <h1>Stretch & Score: <br/> Energize, Strengthen, and Earn Rewards!</h1>
-            <button>Try Stretch925 now!</button>
+            <Link href="/timer"><button>Try Stretch925 now!</button></Link>
           </div>
           <img src="../assets/banner-image.png" alt=""/>
         </div>
-        <div className={styles.whySection}>
+        <div className={styles.whySection} ref={whyRef}>
           <div className={styles.content}>
-            <h1>Why Stretch925?</h1>
+            <h1>Why  <span style={{color: "#fff"}}>Stretch925?</span></h1>
             <p>In today's working world, where prolonged sitting has become the norm, incorporating stretching into your routine is essential. It counteracts the negative effects of sitting by improving circulation, reducing muscle stiffness, and preventing aches and pains. Beyond the physical benefits, stretching offers a mental escape, reducing stress and enhancing clarity. Our app empowers you to prioritize your well-being, break free from the sedentary cycle, and experience the remarkable benefits of stretching for a healthier, more balanced lifestyle.</p>
           </div>
         </div>
-        <div className={styles.HowSectionH1}>
+        <div className={styles.HowSectionH1} ref={howRef}>
           <h1>How It Works</h1>
         </div>
         <div className={styles.container}>

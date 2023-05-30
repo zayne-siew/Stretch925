@@ -89,14 +89,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px 10px; /* Adjust the padding values as needed */
+  padding: 64px 10px; /* Adjust the padding values as needed */
   box-sizing: border-box;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Add a box shadow for visual separation */
   margin-bottom: 20px; /* Add some bottom margin to create space between sections */
 }
 
 .content {
-  max-width: 90vw;
+  max-width: 80vw;
   text-align: center;
 }
 
