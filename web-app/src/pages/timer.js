@@ -92,7 +92,7 @@ const Timer = () => {
         setStretchView("done");
         setIsStretchDone(true);
         setIsStretch(false);
-        
+
     }
 
     const startStretchTimer = () => {
@@ -109,7 +109,7 @@ const Timer = () => {
             goToDoneView();
         }
     }, [stretchSecondsLeft, stretchTimer])
-    
+
 
     return (
         <>
