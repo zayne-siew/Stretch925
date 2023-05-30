@@ -63,10 +63,18 @@ Stretch925 uses the Pomodoro technique to help corporate workers break a long wo
 
 ### Deployment
 
-5. Navigate to the root directory in the terminal and run
+5. To access the isolated **computer vision model**, navigate to the root directory in the terminal and run
 
 ````
+cd cv
 python main.py { arm | neck | side }
+````
+
+6. To access the **web application**, navigate to the root directory in the terminal and run
+
+````
+cd web-app
+npm run dev
 ````
 
 ## Gallery
