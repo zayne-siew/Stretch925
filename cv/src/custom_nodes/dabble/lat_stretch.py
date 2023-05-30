@@ -141,7 +141,7 @@ class Node(AbstractNode):
                 'Either left or right arm is not in a valid position.' +
                 f'\nleft_elbow: {left_elbow}, left_wrist: {left_wrist}, right_elbow: {right_elbow}, right_wrist: {right_wrist}'
             )
-            return False   
+            return False
 
         # Check if either side has crossed the threshold for leaning
         sway_threshold = 25 * pi / 180  # 25 deg
