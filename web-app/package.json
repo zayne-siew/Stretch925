@@ -14,7 +14,7 @@
     "@tensorflow/tfjs-converter": "^4.6.0",
     "eslint": "8.41.0",
     "eslint-config-next": "13.4.4",
-    "next": "15.5.15",
+    "next": "15.5.18",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-icons": "^4.9.0",
